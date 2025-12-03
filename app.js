@@ -11,35 +11,16 @@ console.log(car.year);
 // bracket notation 
 console.log(car["year"]);
 
-let person1 = {
-    name: "Fernando",
-    email: "fernando.lopez@codex.academy",
-    present: true
-};
-console.log("Person 1");
-console.log(person1);
-let person2 = {
-    name: "Messi",
-    email: "messi@codex.academy",
-    present: false
-};
-console.log("Person 2");
-console.log(person2);
-
 let people = [
     {
         name: "Fernando",
-        email: "fernando.lopez@codex.academy",
-        present: true
+        email: "fernando.lopez@codex.academy"
     },
     {
         name: "Messi",
-        email: "messi@codex.academy",
-        present: false
+        email: "messi@codex.academy"
     }
 ];
-
-console.log(people);
 
 
 let taskDataBase = [{
@@ -67,7 +48,7 @@ let taskList = document.getElementById("taskList");
 
 for (let i = 0; i < taskDataBase.length; i++) {
     // modifying the content of the html element
-    taskList.innerHTML += `<li>
+    taskList.innerHTML += `<li class="list-group-item">
     <strong>${taskDataBase[i].taskNames}</strong> : ${taskDataBase[i].taskDurations}
     </li>`
 }
@@ -108,3 +89,20 @@ for (let i = 0; i < dataQualityTracking.length; i++) {
 
 qualityTracking.innerHTML = tablaData;
 
+
+
+function addContact(){
+
+    event.preventDefault();
+
+    let contactName = document.getElementById("contactName");
+    let contactEmail = document.getElementById("contactEmail");
+
+    people.push( {
+        name : contactName.value,
+        email : contactEmail.value
+    } );
+
+    console.table(people);
+
+}
